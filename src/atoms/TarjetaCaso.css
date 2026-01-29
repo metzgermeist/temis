@@ -1,0 +1,107 @@
+﻿/* ================================== */
+/* Estilos de tarjeta de caso desktop */
+/* ================================== */
+
+/* Contenedor principal de la tarjeta en la lista. */
+.tarjeta-caso {
+  display: flex;
+  opacity: 0;
+  transform: translateX(var(--desplazamiento-lateral, -7rem));
+  animation: aparecer-lateral 1.3s cubic-bezier(0.16, 0.84, 0.26, 1) forwards;
+}
+
+/* Tarjeta con borde y sombra sutil. */
+.tarjeta-caso__contenedor {
+  width: 100%;
+  background: rgba(255, 248, 238, 0.94);
+  border-radius: var(--radio-suave);
+  box-shadow: var(--sombra-suave), 0 0.8rem 1.6rem rgba(23, 16, 10, 0.18);
+  border: 0.08rem solid rgba(123, 78, 36, 0.28);
+  transition: transform var(--transicion-media), box-shadow var(--transicion-media);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Enlace que cubre toda la tarjeta para mejor experiencia. */
+.tarjeta-caso__enlace {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.8rem;
+  height: 100%;
+}
+
+/* Texto de accion con color destacado. */
+.tarjeta-caso__accion {
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* Efecto hover para levantar la tarjeta. */
+.tarjeta-caso__contenedor:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: var(--sombra-media), 0 0 1.4rem rgba(255, 255, 255, 0.55);
+}
+
+/* Animacion lateral para tarjetas de servicios. */
+@keyframes aparecer-lateral {
+  from {
+    opacity: 0;
+    transform: translateX(var(--desplazamiento-lateral, -7rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animacion completa (entrada y salida) para scroll con view-timeline. */
+@keyframes entrada-salida-lateral {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--desplazamiento-lateral, -7rem));
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(7rem);
+  }
+}
+
+/* Activar animaciones basadas en scroll cuando el navegador lo soporte. */
+@supports (animation-timeline: view()) {
+  .tarjeta-caso {
+    animation: entrada-salida-lateral 1s linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+
+/* Respeto por preferencias de movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-caso {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ================================== */
+/* Estilos de tarjeta de caso responsive */
+/* ================================== */
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding para pantallas pequenas. */
+  .tarjeta-caso__enlace {
+    padding: 1.4rem;
+  }
+}

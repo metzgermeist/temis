@@ -1,0 +1,22 @@
+﻿/* ================================= */
+/* Estilos de la pagina en escritorio */
+/* ================================= */
+
+/* Layout principal de la pagina. */
+.pagina-inicio {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ================================= */
+/* Estilos de la pagina en responsive */
+/* ================================= */
+
+@media (max-width: 48rem) {
+  /* Mantener el flujo vertical en pantallas pequenas. */
+  .pagina-inicio {
+    min-height: 100%;
+  }
+}
+

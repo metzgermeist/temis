@@ -1,0 +1,116 @@
+﻿/* ============================== */
+/* Estilos globales en escritorio */
+/* ============================== */
+
+/* Variables de color, tipografia y espaciado del sistema. */
+:root {
+  --color-primario: #2b1d12;
+  --color-secundario: #7b4e24;
+  --color-acento: #c79a56;
+  --color-claro: #f7f1e7;
+  --color-texto: #1a120b;
+  --color-texto-suave: #5b4636;
+  --color-blanco: #ffffff;
+  --sombra-suave: 0 1.2rem 2.8rem rgba(43, 29, 18, 0.12);
+  --sombra-media: 0 1.6rem 3.6rem rgba(43, 29, 18, 0.16);
+  --radio-suave: 1.2rem;
+  --radio-redondo: 999rem;
+  --transicion-rapida: 0.2s ease;
+  --transicion-media: 0.35s ease;
+  --fuente-titulos: 'Playfair Display', serif;
+  --fuente-texto: 'Source Sans 3', sans-serif;
+}
+
+/* Reinicio basico para unificar estilos entre navegadores. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajustes generales de tipografia y fondo del sitio. */
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background: radial-gradient(circle at top, #f7f1e7, #fffdf9 60%, #efe3d3);
+  line-height: 1.6;
+}
+
+/* Enlaces sin subrayado por defecto para usar estilos propios. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Listas sin vinetas para construir layouts limpios. */
+ul {
+  list-style: none;
+}
+
+/* Separacion al navegar por anclas con cabecera fija. */
+section {
+  scroll-margin-top: 6rem;
+}
+
+/* Encabezados con fuente destacada y peso visual. */
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+/* Jerarquia tipografica para titulos principales. */
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+/* Jerarquia tipografica para titulos secundarios. */
+h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+/* Jerarquia tipografica para subtitulos. */
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+/* Texto secundario con color suave. */
+p {
+  color: var(--color-texto-suave);
+}
+
+/* Comportamiento suave en desplazamiento entre anclas. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Clase utilitaria sin animacion (se desactiva el efecto global de scroll). */
+.animacion-aparecer {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* ============================== */
+/* Ajustes responsive generales  */
+/* ============================== */
+
+@media (max-width: 64rem) {
+  /* Ajuste general de padding para pantallas medianas. */
+  body {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Ajustes tipograficos en pantallas pequenas. */
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+

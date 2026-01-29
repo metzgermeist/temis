@@ -1,0 +1,63 @@
+﻿/* ================================= */
+/* Estilos de blog en escritorio     */
+/* ================================= */
+
+/* Seccion con fondo degradado sutil. */
+.seccion-blog {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 4rem 6vw;
+  background: linear-gradient(120deg, rgba(28, 79, 138, 0.08), rgba(245, 248, 252, 0.9));
+}
+
+/* Encabezado informativo del blog. */
+.seccion-blog__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 42rem;
+}
+
+/* Etiqueta superior en mayusculas. */
+.seccion-blog__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+}
+
+/* Panel de anuncio de proximos contenidos. */
+.seccion-blog__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem;
+  border-radius: var(--radio-suave);
+  background: var(--color-blanco);
+  box-shadow: var(--sombra-suave);
+}
+
+/* Titulo interno del panel. */
+.seccion-blog__panel-titulo {
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+/* Texto descriptivo del panel. */
+.seccion-blog__panel-texto {
+  color: var(--color-texto-suave);
+}
+
+/* ================================= */
+/* Estilos de blog en responsive     */
+/* ================================= */
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding en pantallas pequenas. */
+  .seccion-blog {
+    padding: 3rem 6vw;
+  }
+}
+

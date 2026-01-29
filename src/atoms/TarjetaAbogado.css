@@ -1,0 +1,71 @@
+﻿/* ===================================== */
+/* Estilos de tarjeta de abogado desktop */
+/* ===================================== */
+
+/* Tarjeta con fondo claro y borde sutil. */
+.tarjeta-abogado {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--color-blanco);
+  border-radius: var(--radio-suave);
+  box-shadow: var(--sombra-suave);
+  border: 0.08rem solid rgba(43, 29, 18, 0.12);
+}
+
+/* Marco fijo para la foto, evita que el contenedor cambie de tamano. */
+.tarjeta-abogado__marco-foto {
+  width: 60%;
+  height: 16rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Foto destacada del abogado dentro de la tarjeta. */
+.tarjeta-abogado__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicion-media);
+}
+
+/* Encabezado con jerarquia tipografica. */
+.tarjeta-abogado__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Estilo destacado de la especialidad. */
+.tarjeta-abogado__especialidad {
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* Texto descriptivo del perfil. */
+.tarjeta-abogado__descripcion {
+  font-size: 1rem;
+}
+
+/* Alineacion del area de contacto. */
+.tarjeta-abogado__contacto {
+  font-style: normal;
+  margin-top: auto;
+}
+
+/* ===================================== */
+/* Estilos de tarjeta de abogado responsive */
+/* ===================================== */
+
+/* Hover solo sobre la imagen, sin afectar el contenedor. */
+.tarjeta-abogado__marco-foto:hover .tarjeta-abogado__foto {
+  transform: scale(1.06);
+}
+
+@media (max-width: 48rem) {
+  /* Ajustes de padding para pantallas pequenas. */
+  .tarjeta-abogado {
+    padding: 1.6rem;
+  }
+}

@@ -1,0 +1,78 @@
+﻿/* ================================= */
+/* Estilos de casos en escritorio    */
+/* ================================= */
+
+/* Seccion de casos con espaciado generoso. */
+.seccion-casos {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 4rem 6vw;
+  background: linear-gradient(
+      135deg,
+      rgba(239, 227, 211, 0.055) 0%,
+      rgba(226, 207, 181, 0.062) 45%,
+      rgba(211, 185, 143, 0.212) 100%
+    ),
+    url('../../img/fondo2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Encabezado con descripcion del listado. */
+.seccion-casos__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 42rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: var(--radio-suave);
+  background: rgba(20, 14, 9, 0.55);
+  box-shadow: 0 0.8rem 1.6rem rgba(23, 16, 10, 0.22);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Etiqueta superior en mayusculas. */
+.seccion-casos__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1c27a;
+}
+
+/* Texto descriptivo del bloque de casos. */
+.seccion-casos__descripcion {
+  color: #f1e3d0;
+}
+
+/* Mejorar contraste del titulo principal sobre fondo fotografico. */
+.seccion-casos h2 {
+  color: #fdf7ee;
+  text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.45);
+}
+
+/* Lista de tarjetas en formato de columnas flexibles. */
+.seccion-casos__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+/* Ajuste de ancho de cada tarjeta dentro del listado. */
+.seccion-casos__lista > li {
+  flex: 1 1 20rem;
+}
+
+/* ================================= */
+/* Estilos de casos en responsive    */
+/* ================================= */
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding en pantallas pequenas. */
+  .seccion-casos {
+    padding: 3rem 6vw;
+  }
+}

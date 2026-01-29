@@ -1,0 +1,176 @@
+﻿/* =========================== */
+/* Estilos del hero en desktop */
+/* =========================== */
+
+/* Seccion principal con layout en dos columnas. */
+.hero {
+  display: flex;
+  gap: 4rem;
+  padding: 4.8rem 6vw 4rem;
+  align-items: center;
+  position: relative;
+  min-height: 35rem;
+  background-image:
+    linear-gradient(90deg, rgba(16, 10, 6, 0.78) 0%, rgba(16, 10, 6, 0.55) 50%, rgba(16, 10, 6, 0.25) 100%),
+    url('../../img/backgrondhero.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--color-claro);
+}
+
+/* Bloque completo del hero con estadisticas debajo. */
+.hero-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Texto introductorio en formato destacado. */
+.hero__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: rgba(247, 241, 231, 0.7);
+  font-weight: 600;
+}
+
+/* Columna principal del hero. */
+.hero__contenido {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Titulos del hero en contraste claro. */
+.hero h1 {
+  color: var(--color-claro);
+  font-size: 2.6rem;
+}
+
+/* Textos generales del hero en tono claro. */
+.hero p {
+  color: rgba(247, 241, 231, 0.85);
+}
+
+/* Etiqueta superior con contraste suave. */
+.hero .hero__etiqueta {
+  color: rgba(247, 241, 231, 0.7);
+}
+
+/* Descripcion principal del hero. */
+.hero__descripcion {
+  max-width: 36rem;
+  color: rgba(247, 241, 231, 0.85);
+}
+
+/* Contenedor de botones y enlaces. */
+.hero__acciones {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* Enlace secundario con estilo moderno. */
+.hero__enlace {
+  font-weight: 600;
+  color: var(--color-claro);
+  position: relative;
+}
+
+/* Subrayado decorativo del enlace secundario. */
+.hero__enlace::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 0.12rem;
+  background: var(--color-acento);
+  opacity: 0.6;
+}
+
+/* Contenedor de estadisticas por fuera del hero. */
+.hero__estadisticas {
+  padding: 0;
+  background: linear-gradient(180deg, #e1c6a1 0%, #f1dfc7 100%);
+}
+
+/* Tarjeta con los indicadores debajo del hero. */
+.hero__estadisticas-contenedor {
+  padding: 2rem 6vw 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  color: var(--color-texto);
+  border-top: 0.08rem solid rgba(43, 29, 18, 0.12);
+}
+
+/* Titulo del bloque de indicadores. */
+.hero__estadisticas-titulo {
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+/* Lista de indicadores en columna. */
+.hero__lista-indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1.6rem;
+}
+
+/* Item de indicador con separacion. */
+.hero__indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* Numero o dato principal del indicador. */
+.hero__indicador-titulo {
+  font-size: 1.6rem;
+  color: var(--color-acento);
+}
+
+/* Descripcion corta del indicador. */
+.hero__indicador-detalle {
+  color: var(--color-texto-suave);
+}
+
+/* =========================== */
+/* Estilos del hero en responsive */
+/* =========================== */
+
+@media (max-width: 64rem) {
+  /* Apilar columnas del hero en pantallas medianas. */
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Ajustar espaciado del bloque de estadisticas. */
+  .hero__estadisticas {
+    padding: 0;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Ajustar espaciado en pantallas pequenas. */
+  .hero {
+    padding: 3.6rem 6vw 3rem;
+  }
+
+  /* Ajustar padding de las estadisticas en mobile. */
+  .hero__estadisticas {
+    padding: 0;
+  }
+
+  /* Apilar botones para mejorar la lectura. */
+  .hero__acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

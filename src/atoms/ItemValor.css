@@ -1,0 +1,75 @@
+﻿/* ================================ */
+/* Estilos de item de valor desktop */
+/* ================================ */
+
+/* Item con icono circular y texto alineado. */
+.item-valor {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem;
+  background: rgba(61, 41, 25, 0.92);
+  border-radius: var(--radio-suave);
+  border: 0.08rem solid rgba(247, 241, 231, 0.18);
+  box-shadow: 0 0.8rem 1.4rem rgba(18, 12, 7, 0.25);
+}
+
+/* Mejorar contraste del texto sobre fondo oscuro. */
+.item-valor__contenido h3 {
+  color: #fdf7ee;
+}
+
+.item-valor__contenido p {
+  color: #eadcc8;
+}
+
+/* Marca visual del valor en forma de punto. */
+.item-valor__marca {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+  border-radius: var(--radio-redondo);
+  background: var(--color-acento);
+  box-shadow: 0 0 0 0.4rem rgba(47, 126, 216, 0.15);
+  animation: parpadeo 1.8s ease-in-out infinite;
+}
+
+/* Contenido textual del valor. */
+.item-valor__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Parpadeo suave del punto para llamar la atencion. */
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0.4rem rgba(47, 126, 216, 0.15);
+  }
+  50% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 0.6rem rgba(47, 126, 216, 0.08);
+  }
+}
+
+/* Respeto por preferencias de movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+  .item-valor__marca {
+    animation: none;
+  }
+}
+
+/* ================================ */
+/* Estilos de item de valor responsive */
+/* ================================ */
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding para pantallas pequenas. */
+  .item-valor {
+    padding: 1.2rem;
+  }
+}
+

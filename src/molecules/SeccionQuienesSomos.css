@@ -1,0 +1,58 @@
+﻿/* ===================================== */
+/* Estilos de quienes somos en escritorio */
+/* ===================================== */
+
+/* Seccion general con fondo claro y espaciado amplio. */
+.seccion-quienes {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 4rem 6vw;
+}
+
+/* Encabezado con textos en columna. */
+.seccion-quienes__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 42rem;
+}
+
+/* Etiqueta superior en mayusculas. */
+.seccion-quienes__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+}
+
+/* Descripcion general del estudio. */
+.seccion-quienes__descripcion {
+  color: var(--color-texto-suave);
+}
+
+/* Contenedor flexible de tarjetas. */
+.seccion-quienes__tarjetas {
+  display: flex;
+  gap: 2rem;
+}
+
+/* ===================================== */
+/* Estilos de quienes somos en responsive */
+/* ===================================== */
+
+@media (max-width: 64rem) {
+  /* Ajuste del layout de tarjetas en pantallas medianas. */
+  .seccion-quienes__tarjetas {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding en pantallas pequenas. */
+  .seccion-quienes {
+    padding: 3rem 6vw;
+  }
+}
+

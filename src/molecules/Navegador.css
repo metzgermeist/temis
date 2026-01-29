@@ -1,0 +1,114 @@
+﻿/* ================================= */
+/* Estilos del navegador en desktop */
+/* ================================= */
+
+/* Encabezado fijo con fondo translucido. */
+.navegador {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 6vw;
+  background: rgba(247, 241, 231, 0.493);
+  backdrop-filter: blur(0.6rem);
+  border-bottom: 0.08rem solid rgba(43, 29, 18, 0.12);
+}
+
+/* Marca con tipografia destacada. */
+.navegador__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+/* Logo del estudio en el encabezado. */
+.navegador__logo {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+}
+
+/* Texto de marca alineado con el logo. */
+.navegador__texto {
+  line-height: 1.1;
+}
+
+/* Contenedor del menu para alinear enlaces. */
+.navegador__menu {
+  display: flex;
+}
+
+/* Lista de enlaces en linea. */
+.navegador__lista {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Item de lista para separar enlaces. */
+.navegador__item {
+  display: flex;
+}
+
+/* Enlaces principales con subrayado animado. */
+.navegador__enlace {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-texto);
+  padding-bottom: 0.2rem;
+}
+
+/* Linea decorativa al pasar el cursor. */
+.navegador__enlace::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 0.12rem;
+  background: var(--color-acento);
+  transition: width var(--transicion-rapida);
+}
+
+/* Activacion del subrayado en hover. */
+.navegador__enlace:hover::after {
+  width: 100%;
+}
+
+/* ================================= */
+/* Estilos del navegador en responsive */
+/* ================================= */
+
+@media (max-width: 64rem) {
+  /* Ajuste de padding lateral para pantallas medianas. */
+  .navegador {
+    padding: 1.2rem 4vw;
+    gap: 1.4rem;
+  }
+
+  /* Reduccion del espacio entre enlaces. */
+  .navegador__lista {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Apilar elementos del navegador en mobile. */
+  .navegador {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Permitir salto de linea en la lista de enlaces. */
+  .navegador__lista {
+    flex-wrap: wrap;
+    row-gap: 0.8rem;
+  }
+}
+

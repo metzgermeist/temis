@@ -1,0 +1,38 @@
+﻿/* ============================== */
+/* Estilos del boton en escritorio */
+/* ============================== */
+
+/* Boton principal con efecto de profundidad y color corporativo. */
+.boton-primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: var(--radio-redondo);
+  background: linear-gradient(120deg, var(--color-secundario), var(--color-acento));
+  color: var(--color-blanco);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+/* Realce del boton al pasar el cursor. */
+.boton-primario:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: var(--sombra-media);
+}
+
+/* ============================== */
+/* Estilos del boton en responsive */
+/* ============================== */
+
+@media (max-width: 48rem) {
+  /* Ajuste del tamano del boton en pantallas pequenas. */
+  .boton-primario {
+    width: 100%;
+    padding: 0.85rem 1.6rem;
+  }
+}
+

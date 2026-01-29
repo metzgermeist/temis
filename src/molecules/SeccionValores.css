@@ -1,0 +1,54 @@
+﻿/* ================================= */
+/* Estilos de valores en escritorio  */
+/* ================================= */
+
+/* Seccion de valores con fondo azul claro. */
+.seccion-valores {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 4rem 6vw;
+  background: rgba(28, 79, 138, 0.06);
+}
+
+/* Encabezado de la seccion. */
+.seccion-valores__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 38rem;
+}
+
+/* Etiqueta en mayusculas para enfatizar. */
+.seccion-valores__etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+}
+
+/* Lista de valores en formato flexible. */
+.seccion-valores__lista {
+  display: flex;
+  gap: 1.6rem;
+}
+
+/* ================================= */
+/* Estilos de valores en responsive */
+/* ================================= */
+
+@media (max-width: 64rem) {
+  /* Apilar valores en pantallas medianas. */
+  .seccion-valores__lista {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Ajuste de padding en pantallas pequenas. */
+  .seccion-valores {
+    padding: 3rem 6vw;
+  }
+}
+
