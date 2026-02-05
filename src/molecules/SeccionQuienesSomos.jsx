@@ -12,16 +12,16 @@ function SeccionQuienesSomos() {
       nombre: 'Dr. Carlos Canevaro',
       especialidad: 'Derecho constitucional',
       descripcion:
-        'Acompana procesos patrimoniales con enfoque humano y precision legal, buscando acuerdos sostenibles.',
-      telefono: '+54 9 11 2345 6789',
+        'Acompaña procesos patrimoniales con enfoque humano y precision legal, buscando acuerdos sostenibles.',
+      telefono: '+54 9 3815 90-4189',
       foto: fotoCarlos
     },
     {
-      id: 'abogado-montero',
-      nombre: 'Dr. Lucas Montero',
-      especialidad: 'Derecho laboral y penal economico',
+      id: 'abogada-morales',
+      nombre: 'Dra. Mirtha Analia Morales',
+      especialidad: 'Derecho de familia',
       descripcion:
-        'Disena estrategias para empresas y particulares con respuesta inmediata y seguimiento permanente.',
+        'Acompaña procesos de familia con escucha activa, claridad juridica y acuerdos sostenibles.',
       telefono: '+54 9 11 9876 5432'
     }
   ]

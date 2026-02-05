@@ -1,4 +1,4 @@
-﻿/* ================================= */
+/* ================================= */
 /* Estilos del navegador en desktop */
 /* ================================= */
 
@@ -14,6 +14,56 @@
   background: rgba(247, 241, 231, 0.493);
   backdrop-filter: blur(0.6rem);
   border-bottom: 0.08rem solid rgba(43, 29, 18, 0.12);
+  transition: transform 0.9s ease, opacity 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.navegador__barra {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navegador__panel {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.navegador__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radio-redondo);
+  border: 0.08rem solid rgba(43, 29, 18, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-primario);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.navegador__toggle:hover {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.4rem 1rem rgba(43, 29, 18, 0.18);
+}
+
+@media (min-width: 64rem) {
+  .navegador--oculto {
+    transform: translateY(-110%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navegador {
+    transition: none;
+  }
 }
 
 /* Marca con tipografia destacada. */
@@ -105,10 +155,43 @@
     align-items: flex-start;
   }
 
+  .navegador__barra {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navegador__toggle {
+    display: inline-flex;
+  }
+
+  .navegador__panel {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-0.6rem);
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navegador__panel--abierto {
+    max-height: 40rem;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navegador__menu {
+    width: 100%;
+  }
+
   /* Permitir salto de linea en la lista de enlaces. */
   .navegador__lista {
-    flex-wrap: wrap;
-    row-gap: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 }
-

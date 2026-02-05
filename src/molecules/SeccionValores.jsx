@@ -34,7 +34,7 @@ function SeccionValores() {
       {/* Encabezado de la seccion de valores */}
       <header className="seccion-valores__encabezado">
         <p className="seccion-valores__etiqueta">Valores del estudio</p>
-        <h2 id="titulo-valores">Principios que guian cada intervencion legal.</h2>
+        <h2 id="titulo-valores">Principios que guian nuestro camino</h2>
       </header>
       {/* Lista de valores en formato visual */}
       <ul className="seccion-valores__lista">{valores.map(RenderizarValor)}</ul>

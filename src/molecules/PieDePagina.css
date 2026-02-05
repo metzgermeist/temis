@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 6vw 2.4rem;
-  background: var(--color-primario);
+  background: linear-gradient(135deg, #2b1d12 0%, #3a2716 45%, #1f150c 100%);
   color: var(--color-blanco);
 }
 
@@ -28,6 +28,10 @@
   max-width: 24rem;
 }
 
+.pie-pagina__marca h2 {
+  color: #f7f1e7;
+}
+
 /* Ajuste de color para textos del footer. */
 .pie-pagina p,
 .pie-pagina a,
@@ -43,11 +47,40 @@
   font-style: normal;
 }
 
+.pie-pagina__contacto a {
+  font-weight: 600;
+  color: var(--color-acento);
+  position: relative;
+  width: fit-content;
+}
+
+.pie-pagina__contacto a::after,
+.pie-pagina__lista a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 0.12rem;
+  background: rgba(199, 154, 86, 0.8);
+  transition: width var(--transicion-rapida);
+}
+
+.pie-pagina__contacto a:hover::after,
+.pie-pagina__lista a:hover::after {
+  width: 100%;
+}
+
 /* Lista de enlaces secundarios. */
 .pie-pagina__lista {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.pie-pagina__lista a {
+  position: relative;
+  width: fit-content;
 }
 
 /* Bloque legal con linea superior. */

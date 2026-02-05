@@ -57,32 +57,12 @@
   }
 }
 
-/* Animacion completa (entrada y salida) para scroll con view-timeline. */
-@keyframes entrada-salida-lateral {
-  0% {
-    opacity: 0;
-    transform: translateX(var(--desplazamiento-lateral, -7rem));
-  }
-  25% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  75% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(7rem);
-  }
-}
-
 /* Activar animaciones basadas en scroll cuando el navegador lo soporte. */
 @supports (animation-timeline: view()) {
   .tarjeta-caso {
-    animation: entrada-salida-lateral 1s linear both;
+    animation: aparecer-lateral 1.3s cubic-bezier(0.16, 0.84, 0.26, 1) both;
     animation-timeline: view();
-    animation-range: entry 0% exit 100%;
+    animation-range: entry 0% entry 100%;
   }
 }
 

@@ -31,8 +31,7 @@
   flex-shrink: 0;
   border-radius: var(--radio-redondo);
   background: var(--color-acento);
-  box-shadow: 0 0 0 0.4rem rgba(47, 126, 216, 0.15);
-  animation: parpadeo 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 0.35rem rgba(47, 126, 216, 0.12);
 }
 
 /* Contenido textual del valor. */
@@ -40,26 +39,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-}
-
-/* Parpadeo suave del punto para llamar la atencion. */
-@keyframes parpadeo {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0.4rem rgba(47, 126, 216, 0.15);
-  }
-  50% {
-    opacity: 0.35;
-    box-shadow: 0 0 0 0.6rem rgba(47, 126, 216, 0.08);
-  }
-}
-
-/* Respeto por preferencias de movimiento reducido. */
-@media (prefers-reduced-motion: reduce) {
-  .item-valor__marca {
-    animation: none;
-  }
 }
 
 /* ================================ */

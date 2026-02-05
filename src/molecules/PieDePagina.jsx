@@ -9,7 +9,7 @@ function PieDePagina() {
       {/* Bloque principal con datos del estudio */}
       <section className="pie-pagina__contenido">
         <header className="pie-pagina__marca">
-          <h2 id="titulo-contacto">Estudio Juridico Canevaro</h2>
+          <h2 id="titulo-contacto">Carlos Canevaro asesores legales</h2>
           <p>
             Atencion personalizada para personas y empresas que buscan respuestas legales claras y
             efectivas.
@@ -17,9 +17,9 @@ function PieDePagina() {
         </header>
         {/* Informacion de contacto oficial */}
         <address className="pie-pagina__contacto">
-          <p>Av. Libertador 1234, Piso 8, Buenos Aires</p>
+          <p>Ayacucho 132, San Miguel de Tucuman</p>
           <a href="mailto:contacto@estudiocanevaro.com">contacto@estudiocanevaro.com</a>
-          <a href="tel:+541123456789">+54 11 2345 6789</a>
+          <a href="tel:+5493815904189">Contacto</a>
         </address>
         {/* Enlaces secundarios para navegacion rapida */}
         <nav className="pie-pagina__navegacion" aria-label="Enlaces secundarios">
@@ -41,7 +41,7 @@ function PieDePagina() {
       </section>
       {/* Linea final con derechos reservados */}
       <section className="pie-pagina__legal">
-        <small>(c) 2026 Estudio Juridico Canevaro. Todos los derechos reservados.</small>
+        <small>(c) 2026 Carlos Canevaro asesores legales. Todos los derechos reservados.</small>
       </section>
     </footer>
   )

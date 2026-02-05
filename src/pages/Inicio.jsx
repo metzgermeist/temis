@@ -29,7 +29,7 @@ function Inicio() {
       {/* Pie de pagina con contactos */}
       <PieDePagina />
       {/* Boton flotante de WhatsApp */}
-      <BotonWhatsAppFlotante numero="+54 9 11 0000-0000" />
+      <BotonWhatsAppFlotante numero="+54 9 3815 90-4189" instagramUsuario="@carloscanevaro" />
     </main>
   )
 }

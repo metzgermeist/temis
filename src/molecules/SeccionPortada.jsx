@@ -41,7 +41,7 @@ function SeccionPortada() {
   // Animar los numeros cuando el bloque entra en viewport.
   useEffect(() => {
     let inicio = null
-    let duracion = 2400
+    let duracion = 5000
     let animacion = null
     let observador = null
 
