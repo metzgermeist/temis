@@ -13,7 +13,7 @@ import BotonWhatsAppFlotante from '../atoms/BotonWhatsAppFlotante.jsx'
 function Inicio() {
   // Renderizar la pagina completa en orden narrativo.
   return (
-    <main className="pagina-inicio">
+    <main className="pagina-inicio" id="inicio">
       {/* Navegador fijo con accesos a secciones */}
       <Navegador />
       {/* Portada con propuesta de valor */}

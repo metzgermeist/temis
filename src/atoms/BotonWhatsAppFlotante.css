@@ -116,4 +116,8 @@
   .whatsapp-tooltip__boton {
     padding: 0.7rem 1rem;
   }
+
+  .whatsapp-tooltip__menu {
+    display: none;
+  }
 }

@@ -116,7 +116,7 @@ function Navegador() {
     { id: 'inicio', texto: 'Inicio', destino: '#inicio' },
     { id: 'quienes-somos', texto: 'Quienes somos', destino: '#quienes-somos' },
     { id: 'valores', texto: 'Valores', destino: '#valores' },
-    { id: 'casos', texto: 'Casos', destino: '#casos' },
+    { id: 'casos', texto: 'Servicios', destino: '#casos' },
     { id: 'blog', texto: 'Blog', destino: '#blog' }
   ]
 
@@ -133,7 +133,7 @@ function Navegador() {
 
   // Renderizar el encabezado con logo y enlaces.
   return (
-    <header className={`navegador${estaOculto ? ' navegador--oculto' : ''}`} id="inicio">
+    <header className={`navegador${estaOculto ? ' navegador--oculto' : ''}`}>
       <div className="navegador__barra">
         {/* Marca del estudio juridico */}
         <a className="navegador__marca" href="#inicio" aria-label="Ir al inicio">
@@ -161,12 +161,6 @@ function Navegador() {
             {enlaces.map(RenderizarEnlace)}
           </ul>
         </nav>
-        {/* Boton de contacto rapido */}
-        <BotonPrimario
-          texto="Agendar consulta"
-          enlace="#contacto"
-          etiqueta="Agendar consulta con el estudio"
-        />
       </div>
     </header>
   )

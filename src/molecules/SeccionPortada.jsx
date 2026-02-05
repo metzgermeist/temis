@@ -122,14 +122,6 @@ function SeccionPortada() {
             resultados medibles.
           </p>
           <section className="hero__acciones" aria-label="Acciones principales">
-            <BotonPrimario
-              texto="Agendar consulta"
-              enlace="#contacto"
-              etiqueta="Agendar una consulta legal"
-            />
-            <a className="hero__enlace" href="#casos">
-              Ver casos destacados
-            </a>
           </section>
         </article>
       </section>
