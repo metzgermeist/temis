@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 4rem 6vw 2.4rem;
-  background: linear-gradient(135deg, #2b1d12 0%, #3a2716 45%, #1f150c 100%);
+  background: linear-gradient(135deg, #0e1624 0%, #101c30 45%, #0b1320 100%);
   color: var(--color-blanco);
 }
 

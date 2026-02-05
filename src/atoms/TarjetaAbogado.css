@@ -11,8 +11,8 @@
   background: linear-gradient(
     135deg,
     rgba(247, 241, 231, 0.92) 0%,
-    rgba(123, 78, 36, 0.22) 52%,
-    rgba(43, 29, 18, 0.16) 100%
+    rgba(14, 22, 36, 0.16) 52%,
+    rgba(10, 18, 32, 0.28) 100%
   );
   border-radius: var(--radio-suave);
   box-shadow: var(--sombra-suave);

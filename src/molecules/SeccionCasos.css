@@ -28,8 +28,8 @@
   max-width: 42rem;
   padding: 1.6rem 1.8rem;
   border-radius: var(--radio-suave);
-  background: rgba(20, 14, 9, 0.55);
-  box-shadow: 0 0.8rem 1.6rem rgba(23, 16, 10, 0.22);
+  background: rgba(14, 22, 36, 0.78);
+  box-shadow: 0 0.8rem 1.6rem rgba(7, 12, 22, 0.3);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
@@ -40,18 +40,18 @@
   letter-spacing: 0.2em;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #f1c27a;
+  color: var(--color-acento);
 }
 
 /* Texto descriptivo del bloque de casos. */
 .seccion-casos__descripcion {
-  color: #f1e3d0;
+  color: rgba(247, 241, 231, 0.78);
 }
 
 /* Mejorar contraste del titulo principal sobre fondo fotografico. */
 .seccion-casos h2 {
   color: #fdf7ee;
-  text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0.3rem 0.9rem rgba(5, 10, 18, 0.55);
 }
 
 /* Lista de tarjetas en formato de columnas flexibles. */

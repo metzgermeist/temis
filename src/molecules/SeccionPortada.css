@@ -96,7 +96,7 @@
 /* Contenedor de estadisticas por fuera del hero. */
 .hero__estadisticas {
   padding: 0;
-  background: linear-gradient(180deg, #e1c6a1 0%, #f1dfc7 100%);
+  background: linear-gradient(180deg, #0e1624 0%, #0b1320 100%);
 }
 
 /* Tarjeta con los indicadores debajo del hero. */
@@ -105,14 +105,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  color: var(--color-texto);
-  border-top: 0.08rem solid rgba(43, 29, 18, 0.12);
+  color: var(--color-claro);
+  border-top: 0.08rem solid rgba(247, 241, 231, 0.12);
 }
 
 /* Titulo del bloque de indicadores. */
 .hero__estadisticas-titulo {
   font-weight: 600;
-  color: var(--color-primario);
+  color: var(--color-claro);
 }
 
 /* Lista de indicadores en columna. */
@@ -137,7 +137,7 @@
 
 /* Descripcion corta del indicador. */
 .hero__indicador-detalle {
-  color: var(--color-texto-suave);
+  color: rgba(247, 241, 231, 0.72);
 }
 
 /* =========================== */

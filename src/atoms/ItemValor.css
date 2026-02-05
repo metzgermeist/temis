@@ -8,10 +8,10 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.4rem;
-  background: rgba(61, 41, 25, 0.92);
+  background: rgba(14, 22, 36, 0.94);
   border-radius: var(--radio-suave);
-  border: 0.08rem solid rgba(247, 241, 231, 0.18);
-  box-shadow: 0 0.8rem 1.4rem rgba(18, 12, 7, 0.25);
+  border: 0.08rem solid rgba(247, 241, 231, 0.12);
+  box-shadow: 0 0.8rem 1.4rem rgba(7, 12, 22, 0.35);
 }
 
 /* Mejorar contraste del texto sobre fondo oscuro. */
@@ -20,7 +20,7 @@
 }
 
 .item-valor__contenido p {
-  color: #eadcc8;
+  color: rgba(247, 241, 231, 0.78);
 }
 
 /* Marca visual del valor en forma de punto. */
