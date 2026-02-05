@@ -10,11 +10,9 @@
   align-items: center;
   position: relative;
   min-height: 35rem;
-  background-image:
-    linear-gradient(90deg, rgba(16, 10, 6, 0.78) 0%, rgba(16, 10, 6, 0.55) 50%, rgba(16, 10, 6, 0.25) 100%),
-    url('../../img/backgrondhero.png');
+  background-image: url('../../img/backgroundhero.png');
   background-size: cover;
-  background-position: top;
+  background-position: 50% 45%;
   background-repeat: no-repeat;
   border-radius: 0;
   box-shadow: none;
@@ -43,17 +41,26 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  background: rgba(14, 22, 36, 0.55);
+  border: 0.08rem solid rgba(247, 241, 231, 0.12);
+  border-radius: 1.2rem;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 1rem 2rem rgba(7, 12, 22, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* Titulos del hero en contraste claro. */
 .hero h1 {
   color: var(--color-claro);
   font-size: 2.6rem;
+  text-shadow: 0 0.4rem 1.2rem rgba(7, 12, 22, 0.55);
 }
 
 /* Textos generales del hero en tono claro. */
 .hero p {
   color: rgba(247, 241, 231, 0.85);
+  text-shadow: 0 0.2rem 0.8rem rgba(7, 12, 22, 0.45);
 }
 
 /* Etiqueta superior con contraste suave. */
@@ -151,6 +158,11 @@
     align-items: flex-start;
   }
 
+  .hero__contenido {
+    width: 100%;
+    padding: 1.8rem 2rem;
+  }
+
   /* Ajustar espaciado del bloque de estadisticas. */
   .hero__estadisticas {
     padding: 0;
@@ -161,6 +173,16 @@
   /* Ajustar espaciado en pantallas pequenas. */
   .hero {
     padding: 3.6rem 6vw 3rem;
+  }
+
+  .hero__contenido {
+    width: 100%;
+    padding: 1.5rem 1.6rem;
+    border-radius: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
   }
 
   /* Ajustar padding de las estadisticas en mobile. */

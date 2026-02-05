@@ -31,6 +31,26 @@
   gap: 2.4rem;
 }
 
+.navegador__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 12, 22, 0.4);
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+
+.navegador__overlay--activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .navegador__toggle {
   display: none;
   align-items: center;
@@ -87,7 +107,8 @@
 
 /* Texto de marca alineado con el logo. */
 .navegador__texto {
-  line-height: 1.1;
+  line-height: 1.25;
+  padding-bottom: 0.08rem;
 }
 
 /* Contenedor del menu para alinear enlaces. */
@@ -109,10 +130,12 @@
 
 /* Enlaces principales con subrayado animado. */
 .navegador__enlace {
+  display: block;
+  width: 100%;
   position: relative;
   font-weight: 500;
   color: rgba(247, 241, 231, 0.88);
-  padding-bottom: 0.2rem;
+  padding: 0.2rem 0;
 }
 
 /* Linea decorativa al pasar el cursor. */
@@ -165,10 +188,32 @@
   .navegador__barra {
     width: 100%;
     justify-content: space-between;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .navegador__marca {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .navegador__logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .navegador__texto {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .navegador__toggle {
     display: inline-flex;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .navegador__panel {
@@ -182,6 +227,8 @@
     overflow: hidden;
     pointer-events: none;
     transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 2;
   }
 
   .navegador__panel--abierto {
@@ -197,8 +244,17 @@
 
   /* Permitir salto de linea en la lista de enlaces. */
   .navegador__lista {
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
+  }
+
+  .navegador__item {
+    width: 100%;
+  }
+
+  .navegador__overlay {
+    display: block;
   }
 }

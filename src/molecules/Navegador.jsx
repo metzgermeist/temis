@@ -11,6 +11,8 @@ function Navegador() {
   const ultimoScroll = useRef(0)
   const estaOcultoRef = useRef(false)
   const ticking = useRef(false)
+  const panelRef = useRef(null)
+  const toggleRef = useRef(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return () => {}
@@ -77,6 +79,26 @@ function Navegador() {
       }
     }
   }, [])
+
+  useEffect(() => {
+    if (!menuAbierto) return () => {}
+
+    const manejarClickFuera = (evento) => {
+      const panel = panelRef.current
+      const toggle = toggleRef.current
+
+      if (!panel || !toggle) return
+      if (panel.contains(evento.target) || toggle.contains(evento.target)) return
+
+      setMenuAbierto(false)
+    }
+
+    document.addEventListener('pointerdown', manejarClickFuera, true)
+
+    return () => {
+      document.removeEventListener('pointerdown', manejarClickFuera, true)
+    }
+  }, [menuAbierto])
 
   useEffect(() => {
     if (typeof window === 'undefined') return () => {}
@@ -150,11 +172,15 @@ function Navegador() {
           aria-expanded={menuAbierto}
           aria-controls="menu-principal"
           onClick={alternarMenu}
+          ref={toggleRef}
         >
           {menuAbierto ? 'Cerrar' : 'Menu'}
         </button>
       </div>
-      <div className={`navegador__panel${menuAbierto ? ' navegador__panel--abierto' : ''}`}>
+      <div
+        className={`navegador__panel${menuAbierto ? ' navegador__panel--abierto' : ''}`}
+        ref={panelRef}
+      >
         {/* Menu principal de navegacion */}
         <nav className="navegador__menu" aria-label="Navegacion principal">
           <ul className="navegador__lista" id="menu-principal">
@@ -162,6 +188,14 @@ function Navegador() {
           </ul>
         </nav>
       </div>
+      <button
+        type="button"
+        className={`navegador__overlay${menuAbierto ? ' navegador__overlay--activo' : ''}`}
+        aria-label="Cerrar menu"
+        aria-hidden={!menuAbierto}
+        tabIndex={menuAbierto ? 0 : -1}
+        onClick={cerrarMenu}
+      />
     </header>
   )
 }
