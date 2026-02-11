@@ -31,6 +31,28 @@
   gap: 2.4rem;
 }
 
+.navegador__admin {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.navegador__admin-boton {
+  border: 0.08rem solid rgba(247, 241, 231, 0.28);
+  border-radius: var(--radio-redondo);
+  padding: 0.45rem 0.9rem;
+  background: rgba(12, 20, 34, 0.35);
+  color: rgba(247, 241, 231, 0.92);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.navegador__admin-boton:hover {
+  border-color: rgba(199, 154, 86, 0.8);
+  color: var(--color-acento);
+}
+
 .navegador__overlay {
   position: fixed;
   inset: 0;
@@ -256,5 +278,11 @@
 
   .navegador__overlay {
     display: block;
+  }
+
+  .navegador__admin {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

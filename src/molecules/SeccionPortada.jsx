@@ -1,7 +1,6 @@
 ﻿// Importar dependencias necesarias.
 import { useEffect, useState } from 'react'
 import './SeccionPortada.css'
-import BotonPrimario from '../atoms/BotonPrimario.jsx'
 
 // Seccion de portada con mensaje principal y llamada a la accion.
 function SeccionPortada() {

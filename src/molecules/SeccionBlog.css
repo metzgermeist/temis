@@ -1,17 +1,11 @@
-﻿/* ================================= */
-/* Estilos de blog en escritorio     */
-/* ================================= */
-
-/* Seccion con fondo degradado sutil. */
 .seccion-blog {
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
+  gap: 1.8rem;
   padding: 4rem 6vw;
   background: linear-gradient(120deg, rgba(28, 79, 138, 0.08), rgba(245, 248, 252, 0.9));
 }
 
-/* Encabezado informativo del blog. */
 .seccion-blog__encabezado {
   display: flex;
   flex-direction: column;
@@ -19,7 +13,6 @@
   max-width: 42rem;
 }
 
-/* Etiqueta superior en mayusculas. */
 .seccion-blog__etiqueta {
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -28,7 +21,14 @@
   color: var(--color-acento);
 }
 
-/* Panel de anuncio de proximos contenidos. */
+.seccion-blog__estado {
+  color: var(--color-texto-suave);
+}
+
+.seccion-blog__estado--error {
+  color: #8f2030;
+}
+
 .seccion-blog__panel {
   display: flex;
   flex-direction: column;
@@ -39,25 +39,115 @@
   box-shadow: var(--sombra-suave);
 }
 
-/* Titulo interno del panel. */
 .seccion-blog__panel-titulo {
   font-weight: 600;
   color: var(--color-primario);
 }
 
-/* Texto descriptivo del panel. */
 .seccion-blog__panel-texto {
   color: var(--color-texto-suave);
 }
 
-/* ================================= */
-/* Estilos de blog en responsive     */
-/* ================================= */
+.seccion-blog__lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.seccion-blog__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.seccion-blog__tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-radius: 1rem;
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.93);
+  box-shadow: var(--sombra-suave);
+  height: 100%;
+  transition: transform var(--transicion-rapida);
+}
+
+.seccion-blog__tarjeta:hover {
+  transform: translateY(-0.2rem);
+}
+
+.seccion-blog__tarjeta img,
+.seccion-blog__sin-imagen {
+  width: 100%;
+  min-height: 10rem;
+  max-height: 10rem;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  background: rgba(199, 154, 86, 0.18);
+}
+
+.seccion-blog__sin-imagen {
+  display: grid;
+  place-items: center;
+  color: var(--color-texto-suave);
+  font-weight: 600;
+}
+
+.seccion-blog__leer-mas {
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.seccion-blog__acciones-admin {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.seccion-blog__acciones-admin button {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0.08rem solid rgba(43, 29, 18, 0.2);
+  border-radius: 999rem;
+  background: var(--color-blanco);
+  color: var(--color-primario);
+  cursor: pointer;
+  transition: transform var(--transicion-rapida), border-color var(--transicion-rapida);
+}
+
+.seccion-blog__acciones-admin button:hover {
+  transform: translateY(-0.1rem);
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 64rem) {
+  .seccion-blog__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 48rem) {
-  /* Ajuste de padding en pantallas pequenas. */
   .seccion-blog {
     padding: 3rem 6vw;
+  }
+
+  .seccion-blog__lista {
+    grid-template-columns: 1fr;
   }
 }
 

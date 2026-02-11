@@ -1,11 +1,11 @@
-// Importar dependencias necesarias.
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navegador.css'
-import BotonPrimario from '../atoms/BotonPrimario.jsx'
 import logo from '../../img/logo.png'
+import { useAuth } from '../contexto/AuthContexto.jsx'
 
-// Navegador principal con enlaces a secciones del sitio.
 function Navegador() {
+  const { esAdmin, cerrarSesion } = useAuth()
   const [estaOculto, setEstaOculto] = useState(false)
   const [menuAbierto, setMenuAbierto] = useState(false)
   const ultimoScroll = useRef(0)
@@ -133,8 +133,12 @@ function Navegador() {
     setMenuAbierto(false)
   }
 
-  // Lista de enlaces principales del menu.
-  let enlaces = [
+  const manejarCerrarSesion = async () => {
+    await cerrarSesion()
+    setMenuAbierto(false)
+  }
+
+  const enlaces = [
     { id: 'inicio', texto: 'Inicio', destino: '#inicio' },
     { id: 'quienes-somos', texto: 'Quienes somos', destino: '#quienes-somos' },
     { id: 'valores', texto: 'Valores', destino: '#valores' },
@@ -142,8 +146,7 @@ function Navegador() {
     { id: 'blog', texto: 'Blog', destino: '#blog' }
   ]
 
-  // Renderizar cada enlace en un item de lista.
-  function RenderizarEnlace(enlace) {
+  const renderizarEnlace = (enlace) => {
     return (
       <li key={enlace.id} className="navegador__item">
         <a className="navegador__enlace" href={enlace.destino} onClick={cerrarMenu}>
@@ -153,11 +156,9 @@ function Navegador() {
     )
   }
 
-  // Renderizar el encabezado con logo y enlaces.
   return (
     <header className={`navegador${estaOculto ? ' navegador--oculto' : ''}`}>
       <div className="navegador__barra">
-        {/* Marca del estudio juridico */}
         <a className="navegador__marca" href="#inicio" aria-label="Ir al inicio">
           <img
             className="navegador__logo"
@@ -181,12 +182,21 @@ function Navegador() {
         className={`navegador__panel${menuAbierto ? ' navegador__panel--abierto' : ''}`}
         ref={panelRef}
       >
-        {/* Menu principal de navegacion */}
         <nav className="navegador__menu" aria-label="Navegacion principal">
           <ul className="navegador__lista" id="menu-principal">
-            {enlaces.map(RenderizarEnlace)}
+            {enlaces.map(renderizarEnlace)}
           </ul>
         </nav>
+        {esAdmin ? (
+          <div className="navegador__admin">
+            <Link to="/herramientas-blog" className="navegador__admin-boton" onClick={cerrarMenu}>
+              Herramientas blog
+            </Link>
+            <button type="button" className="navegador__admin-boton" onClick={manejarCerrarSesion}>
+              Cerrar sesion
+            </button>
+          </div>
+        ) : null}
       </div>
       <button
         type="button"
@@ -201,3 +211,4 @@ function Navegador() {
 }
 
 export default Navegador
+
