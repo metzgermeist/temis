@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 
 // Configuracion de Vite para habilitar React y JSX.
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()],
+  base: '/temis/'
 })
 
 
