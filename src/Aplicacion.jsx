@@ -23,7 +23,7 @@ function RutaPrivada({ children }) {
 function Aplicacion() {
   return (
     <ProveedorAuth>
-      <BrowserRouter>
+      <BrowserRouter basename="/temis">
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/blog/:slug" element={<BlogDetalle />} />
