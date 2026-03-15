@@ -1,9 +1,11 @@
-﻿// Importar dependencias necesarias.
+// Importar dependencias necesarias.
+import { forwardRef } from 'react'
 import './TarjetaAbogado.css'
 import BotonWhatsApp from './BotonWhatsApp.jsx'
+import BotonAnimado from './BotonAnimado.jsx'
 
 // Tarjeta informativa para presentar a cada abogado del estudio.
-function TarjetaAbogado(props) {
+const TarjetaAbogado = forwardRef((props, ref) => {
   // Nombre profesional del abogado.
   let nombre = props.nombre
 
@@ -13,21 +15,15 @@ function TarjetaAbogado(props) {
   // Descripcion corta del perfil.
   let descripcion = props.descripcion
 
-  // Telefono para contacto via WhatsApp.
-  let telefono = props.telefono
+  // Callback para abrir el modal expansivo
+  let onConoceme = props.onConoceme
 
   // Foto del abogado si aplica.
   let foto = props.foto
 
-  // Texto del boton de contacto.
-  let textoBoton = props.textoBoton
-
-  // Etiqueta accesible del boton.
-  let etiquetaBoton = props.etiquetaBoton
-
   // Renderizar la tarjeta con estructura semantica.
   return (
-    <article className="tarjeta-abogado">
+    <article className="tarjeta-abogado" ref={ref}>
       {foto ? (
         <div className="tarjeta-abogado__marco-foto">
           <img
@@ -46,13 +42,12 @@ function TarjetaAbogado(props) {
       </header>
       {/* Resumen profesional del abogado */}
       <p className="tarjeta-abogado__descripcion">{descripcion}</p>
-      {/* Zona de contacto con WhatsApp */}
       <address className="tarjeta-abogado__contacto">
-        <BotonWhatsApp numero={telefono} texto={textoBoton} etiqueta={etiquetaBoton} />
+        <BotonAnimado onClick={onConoceme} texto="Conóceme" className="tarjeta-abogado__accion" />
       </address>
     </article>
   )
-}
+})
 
 export default TarjetaAbogado
 

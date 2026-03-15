@@ -140,8 +140,8 @@ function Navegador() {
 
   const enlaces = [
     { id: 'inicio', texto: 'Inicio', destino: '#inicio' },
-    { id: 'quienes-somos', texto: 'Quienes somos', destino: '#quienes-somos' },
-    { id: 'valores', texto: 'Valores', destino: '#valores' },
+    { id: 'quienes-somos', texto: 'Quiénes Somos', destino: '#quienes-somos' },
+    { id: 'equipo', texto: 'Equipo', destino: '#equipo' },
     { id: 'casos', texto: 'Servicios', destino: '#casos' },
     { id: 'blog', texto: 'Blog', destino: '#blog' }
   ]
@@ -160,12 +160,8 @@ function Navegador() {
     <header className={`navegador${estaOculto ? ' navegador--oculto' : ''}`}>
       <div className="navegador__barra">
         <a className="navegador__marca" href="#inicio" aria-label="Ir al inicio">
-          <img
-            className="navegador__logo"
-            src={logo}
-            alt="Logo de Carlos Canevaro asesores legales"
-          />
-          <span className="navegador__texto"> Asesores Legales</span>
+          <img src={logo} alt="" className="navegador__logo" aria-hidden="true" />
+          <span className="navegador__texto-fuerte">Carlos Canevaro</span>
         </a>
         <button
           type="button"
@@ -185,6 +181,14 @@ function Navegador() {
         <nav className="navegador__menu" aria-label="Navegacion principal">
           <ul className="navegador__lista" id="menu-principal">
             {enlaces.map(renderizarEnlace)}
+            <li className="navegador__item-redes">
+              <a className="navegador__red" href="#" aria-label="LinkedIn de Carlos Canevaro" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a className="navegador__red" href="#" aria-label="X (Twitter) de Carlos Canevaro" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+            </li>
           </ul>
         </nav>
         {esAdmin ? (

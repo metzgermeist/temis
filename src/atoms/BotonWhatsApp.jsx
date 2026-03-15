@@ -1,5 +1,6 @@
-﻿// Importar dependencias necesarias.
+// Importar dependencias necesarias.
 import './BotonWhatsApp.css'
+import BotonAnimado from './BotonAnimado.jsx'
 
 // Boton especializado para abrir un chat de WhatsApp.
 function BotonWhatsApp(props) {
@@ -20,9 +21,14 @@ function BotonWhatsApp(props) {
 
   // Renderizar el boton con estilo corporativo.
   return (
-    <a className="boton-whatsapp" href={enlace} aria-label={etiqueta} target="_blank" rel="noreferrer">
-      {texto}
-    </a>
+    <BotonAnimado 
+      href={enlace} 
+      texto={texto} 
+      className="boton-whatsapp__animado" 
+      target="_blank" 
+      rel="noreferrer" 
+      aria-label={etiqueta}
+    />
   )
 }
 

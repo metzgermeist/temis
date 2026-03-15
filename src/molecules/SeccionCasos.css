@@ -1,78 +1,194 @@
-﻿/* ================================= */
-/* Estilos de casos en escritorio    */
-/* ================================= */
+/* ===================================== */
+/* Rediseño 3D Premium de Servicios      */
+/* ===================================== */
 
-/* Seccion de casos con espaciado generoso. */
 .seccion-casos {
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
-  padding: 4rem 6vw;
-  background: linear-gradient(
-      135deg,
-      rgba(239, 227, 211, 0.055) 0%,
-      rgba(226, 207, 181, 0.062) 45%,
-      rgba(211, 185, 143, 0.212) 100%
-    ),
-    url('../../img/fondo2.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 8rem 6vw;
+  background-color: #0b1320; /* Azul oscuro corporativo / Premium Dark Mode */
+  color: var(--color-claro);
+  overflow: hidden;
 }
 
-/* Encabezado con descripcion del listado. */
+/* Encabezado Principal */
 .seccion-casos__encabezado {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  max-width: 42rem;
-  padding: 1.6rem 1.8rem;
-  border-radius: var(--radio-suave);
-  background: rgba(14, 22, 36, 0.78);
-  box-shadow: 0 0.8rem 1.6rem rgba(7, 12, 22, 0.3);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  max-width: 48rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* Etiqueta superior en mayusculas. */
+.seccion-casos__encabezado h2 {
+  color: var(--color-claro);
+  margin: 0;
+  font-size: 2.8rem;
+  line-height: 1.15;
+}
+
 .seccion-casos__etiqueta {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-acento);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c79a56; /* Dorado elegante */
+  margin: 0;
 }
 
-/* Texto descriptivo del bloque de casos. */
-.seccion-casos__descripcion {
-  color: rgba(247, 241, 231, 0.78);
-}
-
-/* Mejorar contraste del titulo principal sobre fondo fotografico. */
-.seccion-casos h2 {
-  color: #fdf7ee;
-  text-shadow: 0 0.3rem 0.9rem rgba(5, 10, 18, 0.55);
-}
-
-/* Lista de tarjetas en formato de columnas flexibles. */
+/* Estructura de la Lista y Filas Alternadas */
 .seccion-casos__lista {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.6rem;
+  flex-direction: column;
+  gap: 10rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/* Ajuste de ancho de cada tarjeta dentro del listado. */
-.seccion-casos__lista > li {
-  flex: 1 1 20rem;
+.seccion-casos__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
 }
 
-/* ================================= */
-/* Estilos de casos en responsive    */
-/* ================================= */
+.seccion-casos__fila--reverso {
+  flex-direction: row-reverse;
+}
+
+/* Bloque Imagen 3D */
+.seccion-casos__bloque-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Levitacion 3D con CSS */
+.seccion-casos__imagen-3d {
+  width: 100%;
+  max-width: 420px;
+  object-fit: contain;
+  animation: levitar3d 6s ease-in-out infinite;
+  transform-origin: bottom center;
+  clip-path: inset(2px);
+}
+
+/* Placeholder para servicios sin ilustración */
+.seccion-casos__bloque-imagen--placeholder {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(199, 154, 86, 0.12), transparent 70%);
+  border: 1px dashed rgba(199, 154, 86, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(199, 154, 86, 0.5);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  animation: levitar3d 8s ease-in-out infinite alternate;
+}
+
+@keyframes levitar3d {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Bloque Textos del Servicio */
+.seccion-casos__bloque-texto {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.seccion-casos__titulo-fila {
+  font-family: var(--fuente-editorial, 'Playfair Display', serif);
+  font-size: 2.5rem;
+  color: #c79a56; /* Resaltado Dorado */
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.seccion-casos__desc-fila {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85); /* Blanco ligeramente atenuado para no cansar */
+  margin: 0;
+  max-width: 90%;
+}
+
+/* Enlace/Boton de Conocer Más */
+.seccion-casos__enlace {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.4s ease;
+  width: fit-content;
+}
+
+.seccion-casos__enlace:hover {
+  color: #c79a56;
+  border-bottom-color: #c79a56;
+  transform: translateX(12px);
+}
+
+/* ===================================== */
+/* Responsividad                         */
+/* ===================================== */
+@media (max-width: 64rem) {
+  .seccion-casos {
+    padding: 6rem 5vw;
+  }
+  
+  .seccion-casos__fila,
+  .seccion-casos__fila--reverso {
+    gap: 3rem;
+  }
+}
 
 @media (max-width: 48rem) {
-  /* Ajuste de padding en pantallas pequenas. */
-  .seccion-casos {
-    padding: 3rem 6vw;
+  .seccion-casos__encabezado h2 {
+    font-size: 2.2rem;
+  }
+
+  .seccion-casos__fila,
+  .seccion-casos__fila--reverso {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .seccion-casos__lista {
+    gap: 6rem;
+  }
+
+  .seccion-casos__desc-fila {
+    max-width: 100%;
+  }
+
+  .seccion-casos__enlace {
+    margin: 1.5rem auto 0;
+  }
+
+  .seccion-casos__bloque-texto {
+    align-items: center;
   }
 }

@@ -1,0 +1,92 @@
+.boton-animado {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.8rem;
+  border: 0.15rem solid transparent;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #101c30;
+  background-color: transparent;
+  border-radius: 100px;
+  box-shadow: 0 0 0 0.12rem rgba(16, 28, 48, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+  font-family: var(--fuente-texto);
+}
+
+.boton-animado svg {
+  position: absolute;
+  width: 1.2rem;
+  fill: #101c30;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.boton-animado .arr-1 {
+  right: 1rem;
+}
+
+.boton-animado .arr-2 {
+  left: -25%;
+}
+
+.boton-animado .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #101c30;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 0;
+}
+
+.boton-animado .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-0.6rem);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.boton-animado:hover {
+  box-shadow: 0 0 0 0.4rem transparent;
+  color: #f7f1e7;
+  border-radius: 0.6rem;
+}
+
+.boton-animado:hover .arr-1 {
+  right: -25%;
+}
+
+.boton-animado:hover .arr-2 {
+  left: 1rem;
+}
+
+.boton-animado:hover .text {
+  transform: translateX(0.6rem);
+}
+
+.boton-animado:hover svg {
+  fill: #f7f1e7;
+}
+
+.boton-animado:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 0.2rem var(--color-acento);
+}
+
+.boton-animado:hover .circle {
+  width: 15rem;
+  height: 15rem;
+  opacity: 1;
+}

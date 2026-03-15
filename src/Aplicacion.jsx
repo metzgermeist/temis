@@ -21,9 +21,11 @@ function RutaPrivada({ children }) {
 }
 
 function Aplicacion() {
+  const rutaBase = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
     <ProveedorAuth>
-      <BrowserRouter basename="/temis">
+      <BrowserRouter basename={rutaBase}>
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/blog/:slug" element={<BlogDetalle />} />
@@ -44,4 +46,3 @@ function Aplicacion() {
 }
 
 export default Aplicacion
-

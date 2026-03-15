@@ -1,44 +1,55 @@
-﻿/* ================================ */
+/* ================================ */
 /* Estilos de item de valor desktop */
 /* ================================ */
 
-/* Item con icono circular y texto alineado. */
+/* Item con icono y texto alineado. */
 .item-valor {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.4rem;
-  background: rgba(14, 22, 36, 0.94);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  padding: 2.2rem 1.8rem;
+  background: var(--color-claro);
   border-radius: var(--radio-suave);
-  border: 0.08rem solid rgba(247, 241, 231, 0.12);
-  box-shadow: 0 0.8rem 1.4rem rgba(7, 12, 22, 0.35);
+  border: 0.08rem solid rgba(200, 180, 150, 0.2);
+  box-shadow: 0 1rem 2rem rgba(10, 15, 25, 0.03);
+  transition: transform var(--transicion-media), box-shadow var(--transicion-media);
 }
 
-/* Mejorar contraste del texto sobre fondo oscuro. */
+.item-valor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1.5rem 3rem rgba(10, 15, 25, 0.06);
+}
+
+/* Mejorar contraste del texto sobre fondo claro. */
 .item-valor__contenido h3 {
-  color: #fdf7ee;
+  color: var(--color-primario);
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
 }
 
 .item-valor__contenido p {
-  color: rgba(247, 241, 231, 0.78);
+  color: var(--color-texto-suave);
+  line-height: 1.6;
 }
 
-/* Marca visual del valor en forma de punto. */
-.item-valor__marca {
-  width: 0.9rem;
-  height: 0.9rem;
-  margin-top: 0.4rem;
-  flex-shrink: 0;
+/* Icono SVG del valor. */
+.item-valor__icono {
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: var(--radio-redondo);
-  background: var(--color-acento);
-  box-shadow: 0 0 0 0.35rem rgba(47, 126, 216, 0.12);
+  background: rgba(199, 154, 86, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-acento);
 }
 
-/* Contenido textual del valor. */
-.item-valor__contenido {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+.item-valor__icono svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke-width: 1.5;
 }
 
 /* ================================ */
@@ -51,4 +62,3 @@
     padding: 1.2rem;
   }
 }
-

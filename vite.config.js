@@ -2,10 +2,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Configuracion de Vite para habilitar React y JSX.
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: '/temis/'
-})
-
+  // En GitHub Pages el sitio vive bajo /temis/, en desarrollo se sirve desde /
+  base: command === 'build' ? '/temis/' : '/'
+}))
 

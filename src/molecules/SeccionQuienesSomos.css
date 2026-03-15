@@ -1,4 +1,4 @@
-﻿/* ===================================== */
+/* ===================================== */
 /* Estilos de quienes somos en escritorio */
 /* ===================================== */
 
@@ -14,8 +14,13 @@
 .seccion-quienes__encabezado {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.45rem;
   max-width: 42rem;
+}
+
+/* Reducir el espacio vertical entre textos del encabezado. */
+.seccion-quienes__encabezado > * {
+  margin: 0;
 }
 
 /* Etiqueta superior en mayusculas. */
@@ -53,6 +58,161 @@
   /* Ajuste de padding en pantallas pequenas. */
   .seccion-quienes {
     padding: 3rem 6vw;
+  }
+}
+
+/* ===================================== */
+/* Modal Abogado                         */
+/* ===================================== */
+
+.modal-abogado__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(14, 22, 36, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-abogado__contenido {
+  background: var(--color-claro);
+  max-width: 800px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 3rem 3rem 3rem 0;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-abogado__cerrar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-texto-suave);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+  z-index: 10;
+}
+
+.modal-abogado__cerrar:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-texto);
+}
+
+.modal-abogado__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.modal-abogado__columna-foto {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.modal-abogado__foto {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 0 24px 24px 0;
+}
+
+.modal-abogado__columna-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-abogado__nombre {
+  font-size: 2.2rem;
+  color: var(--color-primario);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.modal-abogado__especialidad-modal {
+  color: var(--color-acento);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modal-abogado__cv {
+  font-size: 1.05rem;
+  color: var(--color-texto);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-abogado__lista-cv {
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.modal-abogado__lista-cv li {
+  margin-bottom: 0.4rem;
+  list-style-type: disc;
+}
+
+.modal-abogado__contacto-wrap {
+  margin-top: auto;
+}
+
+@media (max-width: 48rem) {
+  .modal-abogado__contenido {
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 85vh;
+  }
+
+  .modal-abogado__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-abogado__columna-foto {
+    margin: -2rem -2rem 0 -2rem;
+  }
+
+  .modal-abogado__foto {
+    border-radius: 24px 24px 0 0;
+    min-height: 250px;
+    height: 300px;
   }
 }
 

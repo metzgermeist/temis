@@ -1,8 +1,9 @@
-name: Deploy a GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,27 +18,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar repositorio
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Instalar dependencias
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Buildear proyecto
+      - name: Build project
         run: npm run build
 
-      - name: Copiar 404.html para SPA routing
+      - name: Copy 404.html for SPA routing
         run: cp dist/index.html dist/404.html
 
-      - name: Subir artefacto
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist
 
   deploy:
     needs: build
@@ -46,6 +51,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deployar a GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

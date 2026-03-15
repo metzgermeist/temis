@@ -1,6 +1,8 @@
-﻿// Importar dependencias necesarias.
+// Importar dependencias necesarias.
 import { useEffect, useState } from 'react'
 import './SeccionPortada.css'
+import fotoCarlosHero from '../../img/canevaHero.png'
+import BotonAnimado from '../atoms/BotonAnimado.jsx'
 
 // Seccion de portada con mensaje principal y llamada a la accion.
 function SeccionPortada() {
@@ -112,17 +114,26 @@ function SeccionPortada() {
   return (
     <section className="hero-bloque">
       <section className="hero animacion-aparecer" aria-labelledby="titulo-hero">
-        {/* Bloque principal con titulo y mensaje */}
-        <article className="hero__contenido">
-          <p className="hero__etiqueta">Estudio juridico contemporaneo</p>
-          <h1 id="titulo-hero">Defendemos tus derechos con estrategia y cercania.</h1>
-          <p className="hero__descripcion">
-            Soluciones legales integrales para personas y empresas, con comunicacion clara y
-            resultados medibles.
-          </p>
-          <section className="hero__acciones" aria-label="Acciones principales">
-          </section>
-        </article>
+        {/* Bloque principal con titulo y mensaje en layout de dos columnas */}
+        <div className="hero__grid">
+          <article className="hero__contenido">
+            <h1 id="titulo-hero">Defendemos tus derechos con estrategia y cercanía.</h1>
+            <p className="hero__descripcion">
+              Una visión humana del derecho liderada por Carlos Canevaro. Soluciones legales integrales con comunicación clara y resultados medibles.
+            </p>
+            <section className="hero__acciones" aria-label="Acciones principales">
+              <BotonAnimado href="#quienes-somos" texto="Conocer al equipo" />
+            </section>
+          </article>
+
+          <div className="hero__imagen-contenedor">
+            <img
+              src={fotoCarlosHero}
+              alt="Carlos Canevaro, Asesor Legal"
+              className="hero__imagen-perfil"
+            />
+          </div>
+        </div>
       </section>
       {/* Indicadores de confianza por fuera del hero */}
       <section className="hero__estadisticas" aria-label="Resultados destacados">

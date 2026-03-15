@@ -1,4 +1,4 @@
-﻿/* ============================== */
+/* ============================== */
 /* Estilos globales en escritorio */
 /* ============================== */
 
@@ -9,37 +9,21 @@
   --color-acento: #c79a56;
   --color-claro: #f7f1e7;
   --color-texto: #1a120b;
-  --color-texto-suave: #5b4636;
-  --color-blanco: #ffffff;
-  --sombra-suave: 0 1.2rem 2.8rem rgba(43, 29, 18, 0.12);
-  --sombra-media: 0 1.6rem 3.6rem rgba(43, 29, 18, 0.16);
-  --radio-suave: 1.2rem;
-  --radio-redondo: 999rem;
-  --transicion-rapida: 0.2s ease;
-  --transicion-media: 0.35s ease;
-  --fuente-titulos: 'Playfair Display', serif;
-  --fuente-texto: 'Source Sans 3', sans-serif;
+  --fuente-titulos: 'Outfit', sans-serif;
+  --fuente-texto: 'Outfit', sans-serif;
+  --fuente-firma: 'Alex Brush', cursive;
+  --fuente-editorial: 'Playfair Display', serif;
 }
 
-/* Reinicio basico para unificar estilos entre navegadores. */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* Ajustes generales de tipografia y fondo del sitio. */
 body {
   font-family: var(--fuente-texto);
   color: var(--color-texto);
-  background: radial-gradient(circle at top, #f7f1e7, #fffdf9 60%, #efe3d3);
-  line-height: 1.6;
-}
-
-/* Enlaces sin subrayado por defecto para usar estilos propios. */
-a {
-  color: inherit;
-  text-decoration: none;
+  background-color: var(--color-claro);
+  margin: 0;
 }
 
 /* Listas sin vinetas para construir layouts limpios. */
@@ -47,7 +31,11 @@ ul {
   list-style: none;
 }
 
-/* Separacion al navegar por anclas con cabecera fija. */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 section {
   scroll-margin-top: 6rem;
 }
@@ -67,6 +55,8 @@ h1 {
   line-height: 1.1;
   color: #0b1320;
 }
+
+/* Jerarquia tipografica para titulos secundarios. */
 
 /* Jerarquia tipografica para titulos secundarios. */
 h2 {
@@ -91,11 +81,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Clase utilitaria sin animacion (se desactiva el efecto global de scroll). */
+/* Clase utilitaria para animacion de entrada (estado inicial oculto). */
 .animacion-aparecer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado animado cuando el elemento entra en viewport. */
+.animacion-aparecer.animado {
   opacity: 1;
-  transform: none;
-  animation: none;
+  transform: translateY(0);
 }
 
 /* ============================== */
@@ -115,4 +111,3 @@ html {
     font-size: 2.2rem;
   }
 }
-
